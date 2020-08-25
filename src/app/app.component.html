@@ -1,46 +1,12 @@
-<!--<header class="app-titlebar">
-    <div class="app-drag-region">
-        <div class="window-title">
-            <span>SunderMine</span>
-        </div>
-    </div>
-</header>
-
+<!--Wrapper for the entire app to position it correctly-->
 <div class="app-body">
-    <router-outlet></router-outlet>
-</div>
-
-<button class="close-button" (click)="doClose()">
-    <img class="close-icon" src="assets/x.png" />
-</button>
-
-.close-button {
-        position: absolute;
-        top: 0;
-        right: 5px;
-
-        width: $header-size;
-        height: $header-size;
-
-        background: transparent;
-        border: none;
-        margin: 0;
-        padding: 0;
-
-        z-index: 999;
-
-        .close-icon {
-            height: 100%;
-            width: 100%;
-        }
-    }
-
-<img src="assets/cardboard_confused.png" />-->
-<div class="app-body">
+    <!--The header (above the book)-->
     <div class="app-header">
+        <!--The bar that allows the window to be dragged around -->
         <div class="move-bar">
             <span class="title-text">SunderMine - Save Editor & Mod Loader</span>
         </div>
+        <!--The close, maximize and minimize buttons-->
         <ul class="button-bar">
             <li>
                 <button (click)="doMinimize()">
@@ -60,41 +26,54 @@
         </ul>
     </div>
     
+    <!--The book and it's pages-->
     <div class="app-content">
         <div class="book">
+            <!--Spacer at the top of the book (tabs here?)-->
             <div class="book-top"></div>
+            <!--The actual pages of the book and their contents-->
             <div class="book-pages">
+                <!--Don't allow content to stretch out of the specific page of the book-->
                 <div class="edge"></div>
+                <!--The left (main) page of the book -->
                 <div class="page">
+                    <!--Default router outlet-->
                     <router-outlet></router-outlet>
                 </div>
+                <!--The middle of the book between the two pages-->
                 <div class="spine"></div>
+                <!--The right (secondary) page of the book-->
                 <div class="page">
+                    <!--page2 router outlet-->
                     <router-outlet name="page2"></router-outlet>
                 </div>
+                <!--The right edge of the book (tabs here?)-->
                 <div class="edge">
+                    <!--Definitely tabs here. Haha-->
                     <ul class="tabs">
                         <li>
-                            <a>
+                            <a [routerLink]="[{ outlets: { primary: ['mods'], page2: ['mods'] } }]" routerLinkActive="active">
                                 <span>Mods</span>
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a [routerLink]="[{ outlets: { primary: ['saves'], page2: ['saves'] } }]" routerLinkActive="active">
                                 <span>Saves</span>
                             </a>
                         </li>
                         <li>
-                            <a>
-                                <span>Credits</span>
+                            <a [routerLink]="[{ outlets: { primary: ['settings'], page2: ['settings'] } }]" routerLinkActive="active">
+                                <span>Settings</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
+            <!--Spacer at the bottom of the book (tabs here?)-->
             <div class="book-bottom"></div>
         </div>
     </div>
+    <!--The footer (below the book)-->
     <div class="app-footer">
         <span>All images and assets are property of <a (click)="doThorium()">Thorium</a></span>
     </div>
