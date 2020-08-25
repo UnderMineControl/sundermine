@@ -14,7 +14,8 @@ function createWindow () {
         webPreferences: {
             nodeIntegration: true,
             devTools: debug
-        }
+        },
+        icon: path.join(__dirname, `/dist/assets/icon.ico`)
     })
 
     mainWindow.loadURL(
@@ -24,8 +25,6 @@ function createWindow () {
             slashes: true
         })
     );
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools()
 
     mainWindow.on('closed', function () {
         mainWindow = null
