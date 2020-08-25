@@ -1,0 +1,101 @@
+<!--<header class="app-titlebar">
+    <div class="app-drag-region">
+        <div class="window-title">
+            <span>SunderMine</span>
+        </div>
+    </div>
+</header>
+
+<div class="app-body">
+    <router-outlet></router-outlet>
+</div>
+
+<button class="close-button" (click)="doClose()">
+    <img class="close-icon" src="assets/x.png" />
+</button>
+
+.close-button {
+        position: absolute;
+        top: 0;
+        right: 5px;
+
+        width: $header-size;
+        height: $header-size;
+
+        background: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+
+        z-index: 999;
+
+        .close-icon {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+<img src="assets/cardboard_confused.png" />-->
+<div class="app-body">
+    <div class="app-header">
+        <div class="move-bar">
+            <span class="title-text">SunderMine - Save Editor & Mod Loader</span>
+        </div>
+        <ul class="button-bar">
+            <li>
+                <button (click)="doMinimize()">
+                    <img src="assets/redline.png" />
+                </button>
+            </li>
+            <li>
+                <button (click)="doMaximize()">
+                    <img src="assets/redsquare.png" />
+                </button>
+            </li>
+            <li>
+                <button class="close" (click)="doClose()">
+                    <img src="assets/redx.png" />
+                </button>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="app-content">
+        <div class="book">
+            <div class="book-top"></div>
+            <div class="book-pages">
+                <div class="edge"></div>
+                <div class="page">
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="spine"></div>
+                <div class="page">
+                    <router-outlet name="page2"></router-outlet>
+                </div>
+                <div class="edge">
+                    <ul class="tabs">
+                        <li>
+                            <a>
+                                <span>Mods</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Saves</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <span>Credits</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="book-bottom"></div>
+        </div>
+    </div>
+    <div class="app-footer">
+        <span>All images and assets are property of <a (click)="doThorium()">Thorium</a></span>
+    </div>
+</div>

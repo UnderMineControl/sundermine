@@ -1,0 +1,211 @@
+$header-size: 32px;
+$footer-size: 32px;
+
+$file-folder: './../assets/';
+$backgroundimg: '#{$file-folder}background.png';
+$coverimg: '#{$file-folder}BookBackground.png';
+$pagesimg: '#{$file-folder}UI_BookProps1.png';
+$closeimg: '#{$file-folder}x.png';
+$tab1img: '#{$file-folder}tab1.png';
+$tab2img: '#{$file-folder}tab2.png';
+$tab3img: '#{$file-folder}tab3.png';
+$cursorimg: '#{$file-folder}Cursor.png';
+
+.app-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column;
+
+    background-color: #1c2126;
+    background-image: url(#{$backgroundimg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    cursor: url(#{$cursorimg}), auto !important;
+
+    .app-header {
+        
+        height: $header-size;
+
+        display: flex;
+        flex-flow: row;
+
+        .move-bar {
+            flex: 1;
+            -webkit-app-region: drag;
+            padding: 5px;
+
+            .title-text {
+                text-shadow: 2px 2px #000000;
+            }
+        }
+
+        .button-bar {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            list-style-type: none;
+
+            li {
+                float: left;
+
+                button {
+                    display: block;
+                    height: 30px;
+                    width: $header-size;
+                    padding: 7px;
+                    border: none;
+                    background: transparent;
+                    outline: none;
+
+                    img {
+                        width: 90%;
+                        padding: 5%;
+                    }
+
+                    &.close:hover {
+                        background: rgba(255, 0, 0, 0.7);
+                    }
+
+                    &:focus {
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                    }
+
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.3);
+                        border: none;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .app-content {
+        
+        flex: 1;
+
+        overflow: auto;
+        padding: 0;
+        margin: 0;
+        background-image: url(#{$coverimg});
+        background-repeat: no-repeat;
+        background-size: 98% 100%;
+
+        .book {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        
+            .book-top {
+                height: 1%;
+            }
+        
+            .book-bottom {
+                height: 9%;
+            }
+        
+            .book-pages {
+                flex: 1;
+                
+                display: flex;
+                flex-flow: row;
+        
+        
+                .edge {
+                    width: 7%;
+                    height: 100%;
+
+                    .tabs {
+                        list-style-type: none;
+                        height: 100%;
+                        width: 80%;
+                        padding: 3%;
+                        margin: 0;
+
+                        li {
+                            height: 15%;
+                            width: 100%;
+                            max-width: 60px;
+                            padding: 0;
+                            margin: 0;
+
+                            &:nth-child(3n){
+                                background-image: url(#{$tab1img});
+                            }
+
+                            &:nth-child(3n + 1){
+                                background-image: url(#{$tab2img});
+                            }
+
+                            &:nth-child(3n + 2){
+                                background-image: url(#{$tab3img});
+                            }
+
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+
+                            a {
+                                display: inline-block;
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+
+                                span {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 30%;
+
+                                    transform: translateX(-50%) translateY(-50%) rotate(90deg);
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .page {
+                    width: 38%;
+                    height: 100%;
+        
+                    margin: 0;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                }
+        
+                .spine {
+                    flex: 1;
+                }
+            }
+        }
+
+    }
+
+    .app-footer {
+        height: $header-size;
+        padding: 5px;
+
+        span {
+            text-shadow: 2px 2px #000000;
+            padding: 5px;
+            
+            a {
+                color: rgb(200, 130, 232);
+                text-decoration: none;
+
+                &:visited,
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: volter;
+    src: url('./assets/Volter__28Goldfish_29.ttf');
+}
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: volter !important;
+}
