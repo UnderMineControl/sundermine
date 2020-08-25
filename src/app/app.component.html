@@ -3,11 +3,11 @@
     <!--The header (above the book)-->
     <div class="app-header">
         <!--The bar that allows the window to be dragged around -->
-        <div class="move-bar">
-            <span class="title-text">SunderMine - Save Editor & Mod Loader</span>
+        <div class="text-bar">
+            <span>SunderMine - Save Editor & Mod Loader</span>
         </div>
         <!--The close, maximize and minimize buttons-->
-        <ul class="button-bar">
+        <ul>
             <li>
                 <button (click)="doMinimize()">
                     <img src="assets/redline.png" />
@@ -75,6 +75,20 @@
     </div>
     <!--The footer (below the book)-->
     <div class="app-footer">
-        <span>All images and assets are property of <a (click)="doThorium()">Thorium</a></span>
+        <div class="text-bar">
+            <span>All images and assets are property of <a (click)="doThorium()">Thorium</a></span>
+        </div>
+        <ul>
+            <li>
+                <button (click)="doGithub()">
+                    <img src="assets/GitHub-Mark-32px.png" />
+                </button>
+            </li>
+            <li>
+                <button (click)="doDiscord()">
+                    <img src="assets/Discord.png" />
+                </button>
+            </li>
+        </ul>
     </div>
 </div>

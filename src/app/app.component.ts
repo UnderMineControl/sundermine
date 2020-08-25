@@ -33,4 +33,12 @@ export class AppComponent {
     doThorium() {
         this._el.shell.openExternal('https://undermine.game/#thorium');
     }
+
+    doDiscord() {
+        this._el.shell.openExternal('https://discord.gg/75vNc9v');
+    }
+
+    doGithub() {
+        this._el.shell.openExternal('https://github.com/underminecontrol/sundermine');
+    }
 }   
