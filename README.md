@@ -13,6 +13,7 @@ Then you should see SunderMine open after everything finishes building. If you h
 
 ## Features
 Here is a list of features that are planned for SunderMine:
+- [x] A cool UnderMine inspired theme!
 - [ ] Save file backup
     - [ ] Support for Steam & GamePass versions of the game
     - [ ] Custom back-up directory and save file renaming
