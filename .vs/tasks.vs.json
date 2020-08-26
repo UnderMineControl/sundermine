@@ -1,0 +1,20 @@
+{
+	"version": "0.2.1",
+	"tasks": [
+		{
+			"taskLabel": "task-SundermineJS",
+			"appliesTo": "/",
+			"type": "launch",
+			"contextType": "build",
+			"command": "cmd.exe",
+			"args": [
+				"npm",
+				"run",
+				"start:electron"
+			],
+			"envVars": {
+				"VSCMD_START_DIR": "\"${workspaceRoot}\""
+			}
+		}
+	]
+}
