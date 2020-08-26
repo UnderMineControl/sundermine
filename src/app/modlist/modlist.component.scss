@@ -1,0 +1,40 @@
+h2 {
+	font-family: volter;
+	font-weight: bold;
+	text-shadow: 2px 2px #000000;
+}
+
+
+ul.label-collection {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	margin-bottom: 30px;
+
+	li {
+		background-color: rgba(58, 47, 33, 0.75);
+		width: 98%;
+		border-radius: 5px;
+		border: 2px solid rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-flow: row;
+		margin-bottom: 3px;
+
+		span {
+			text-shadow: 2px 2px #000000;
+			padding: 5px;
+		}
+
+		span:nth-child(even) {
+			max-width: 80%;
+			overflow: hidden;
+		}
+
+		span:nth-child(odd) {
+			flex: 1;
+		}
+	}
+}

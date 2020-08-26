@@ -1,10 +1,29 @@
-<button (click)="doClick()">Click me</button>
 
-<ul>
-    <li>
-        <b>Steam: </b>{{ steamInstallPath }}
-    </li>
-   <li *ngFor="let path of savePaths">
-       <b>Save Path: </b> {{ path }}
-   </li> 
+<h2>Game Installations:</h2>
+
+<ul *ngFor="let install of installs" class="label-collection">
+	<li>
+		<span>Operating System</span>
+		<span>{{ install.platform }}</span>
+	</li>
+	<li>
+		<span>Platform</span>
+		<span>{{ install.isSteam ? 'Steam' : 'Xbox Gamepass' }}</span>
+	</li>
+	<li>
+		<span>Mod Support</span>
+		<span>{{ install.mods.supported ? 'Yes' : 'No' }}</span>
+	</li>
+	<li *ngIf="install.mods.supported">
+		<span>Install Path</span>
+		<span>{{ install.mods.path }}</span>
+	</li>
+	<li>
+		<span>Save Backup Support</span>
+		<span>{{ install.saves.supported ? 'Yes' : 'No' }}</span>
+	</li>
+	<li *ngIf="install.saves.supported">
+		<span>Saves Path</span>
+		<span>{{ install.saves.path }}</span>
+	</li>
 </ul>
