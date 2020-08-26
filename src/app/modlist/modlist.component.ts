@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SavePathsService } from './../save-paths/save-paths.service';
+import { PathsService } from './../services';
 
 @Component({
     selector: 'app-modlist',
@@ -9,9 +9,10 @@ import { SavePathsService } from './../save-paths/save-paths.service';
 export class ModlistComponent implements OnInit {
 
     steamInstallPath: string = 'Nothing to see here...';
+    savePaths: string[] = [];
 
     constructor(
-        private _sp: SavePathsService
+        private _sp: PathsService
     ) { }
 
     ngOnInit(): void {
@@ -19,7 +20,9 @@ export class ModlistComponent implements OnInit {
     }
 
     async doClick() {
-        this.steamInstallPath = await this._sp.getSteamPath();
+        this.steamInstallPath = await this._sp.steamInstallPath();
+
+        this.savePaths = await this._sp.savePaths();
     }
 
 }

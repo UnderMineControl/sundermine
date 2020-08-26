@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SavePathsService } from './save-paths.service';
+import { PathsService } from './paths.service';
 
 describe('SavePathsService', () => {
-  let service: SavePathsService;
+  let service: PathsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SavePathsService);
+    service = TestBed.inject(PathsService);
   });
 
   it('should be created', () => {

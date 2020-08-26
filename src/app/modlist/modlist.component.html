@@ -1,3 +1,10 @@
 <button (click)="doClick()">Click me</button>
 
-<p>{{ steamInstallPath }}</p>
+<ul>
+    <li>
+        <b>Steam: </b>{{ steamInstallPath }}
+    </li>
+   <li *ngFor="let path of savePaths">
+       <b>Save Path: </b> {{ path }}
+   </li> 
+</ul>
